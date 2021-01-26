@@ -1,0 +1,6 @@
+.header{
+    color: var(--header-title);
+}
+.header__title{
+    margin-bottom: 10px;
+}
