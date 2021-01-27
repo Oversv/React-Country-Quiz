@@ -1,13 +1,12 @@
-import React, {useState } from 'react'
+import React from 'react'
 import './styles.css'
 
-const Question = ({question}) => {
+const Question = ({capital}) => {
 
     return (
-        <>    
-            <h2 className="question"> {question} is the capital of</h2>            
-        </>
-        
+        <> 
+            <h2 className="question">{capital} is the capital of</h2>            
+        </>    
     )
 }
 
