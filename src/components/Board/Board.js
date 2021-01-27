@@ -1,6 +1,6 @@
 import React from 'react'
-import Question from '../Question'
-import Answer from '../Answer'
+import Question from '../Question/Question'
+import Answer from '../Answer/Answer'
 import './styles.css'
 
 const Board = () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.css'
 
-const index = () => {
+const Answer = () => {
     return (
         <ol className="answear">
             <li className="answear__item selected"><span className="answear__letter">A</span>Vietnam</li>
@@ -12,4 +12,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Answer
