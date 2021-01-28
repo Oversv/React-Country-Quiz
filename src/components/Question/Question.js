@@ -1,7 +1,11 @@
 import React from 'react'
+import getCapital from '../../helpers/getCapital'
 import './styles.css'
 
-const Question = ({capital}) => {
+const Question = ({capitals}) => {
+
+     const capital = getCapital(capitals)
+    //  console.log(capital)
 
     return (
         <> 

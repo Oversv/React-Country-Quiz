@@ -30,7 +30,9 @@ const Board = () => {
                 loading
                     ? <h3>Loading</h3>
                     : <>
-                        <Question />
+                        <Question 
+                            capitals={capitals}
+                        />
                         <Answer  />                        
                       </>         
             }    
