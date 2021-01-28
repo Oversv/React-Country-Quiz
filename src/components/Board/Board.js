@@ -1,19 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Question from '../Question/Question'
 import Answer from '../Answer/Answer'
 import './styles.css'
-import getRandom from '../../helpers/getRandom'
 
+const Board = () => {
+    const [countries, setCountries] = useState([])
+    const [capitals, setCapitals] = useState([])
+    const [flags, setFlags] = useState([])
+    const [loading, setLoading] =useState(true)
 
-const Board = ({data}) => {
-    const [country, setCountry] = useState(data[getRandom(data.length)])
+    useEffect(() => {
+        const url = 'https://restcountries.eu/rest/v2/all'
+        setLoading(true)
+
+        fetch(url)
+            .then(res => res.json())
+            .then(res=>{
+                setCountries(res.map(country => country.name))
+                setCapitals(res.map(country => country.capital))
+                setFlags(res.map(country => country.flags))
+                setLoading(false)
+            })
+    },[])
 
     return (        
+ 
         <section className="board">
-           <Question  
-                capital={country.capital}
-           />
-           <Answer />        
+            {
+                loading
+                    ? <h3>Loading</h3>
+                    : <>
+                        <Question />
+                        <Answer  />                        
+                      </>         
+            }    
         </section>        
     )
 }
